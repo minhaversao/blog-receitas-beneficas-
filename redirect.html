@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: center; max-width: 500px; }
+        h1 { color: #0072ff; }
+        .loading { display: inline-block; width: 40px; height: 40px; border: 3px solid rgba(0,114,255,0.3); border-radius: 50%; border-top-color: #0072ff; animation: spin 1s ease-in-out infinite; margin: 15px auto; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Preparando Seu Acesso</h1>
+        <p>Estamos redirecionando você para o conteúdo solicitado. Por favor, aguarde um momento...</p>
+        <div class="loading"></div>
+        <p id="countdown">Redirecionando em <span id="seconds">5</span> segundos...</p>
+    </div>
+
+    <script>
+        // Parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const target = urlParams.get('to') || 'https://pay.kiwify.com.br/qinbsji'; // URL padrão se não especificada
+        const source = urlParams.get('source') || 'direct';
+        
+        // Registrar o clique no localStorage (simulando um banco de dados)
+        function logClick() {
+            const clickInfo = {
+                target: target,
+                source: source,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                referrer: document.referrer
+            };
+            
+            let clicks = JSON.parse(localStorage.getItem('affiliate_clicks') || '[]');
+            clicks.push(clickInfo);
+            localStorage.setItem('affiliate_clicks', JSON.stringify(clicks));
+            
+            // Também enviaríamos para um servidor real em uma implementação completa
+            console.log('Clique registrado:', clickInfo);
+        }
+        
+        // Contador regressivo
+        let secondsLeft = 5;
+        const interval = setInterval(() => {
+            secondsLeft--;
+            document.getElementById('seconds').textContent = secondsLeft;
+            
+            if (secondsLeft <= 0) {
+                clearInterval(interval);
+                // Registrar o clique antes de redirecionar
+                logClick();
+                // Redirecionar para a URL de destino
+                window.location.href = target;
+            }
+        }, 1000);
+    </script>
+</body>
+</html> 

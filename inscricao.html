@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receba Dicas Grátis - Blog Receitas Benéficas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { width: 80%; max-width: 600px; margin: 30px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 5px; }
+        header { background-color: #0072ff; color: #fff; padding: 20px 0; text-align: center; }
+        header h1 { margin: 0; font-size: 2em; }
+        h2 { color: #0072ff; margin-top: 0; }
+        .lead-form { margin: 20px 0; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"] { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
+        .subscribe-btn { background-color: #FF6B00; color: white; border: none; padding: 12px 20px; font-size: 1.1rem; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; }
+        .subscribe-btn:hover { background-color: #FF8C00; }
+        .benefits { margin: 20px 0; }
+        .benefits ul { padding-left: 20px; }
+        .benefits li { margin-bottom: 10px; }
+        .disclaimer { font-size: 0.8em; color: #777; margin-top: 20px; }
+        .back-link { display: block; margin-top: 20px; text-align: center; }
+        footer { text-align: center; padding: 20px; margin-top: 30px; background-color: #333; color: #fff; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog de Receitas Benéficas</h1>
+    </header>
+
+    <nav style="background-color: #005ccf; padding: 10px 0; text-align: center;">
+        <a href="blog.html" style="color: white; text-decoration: none; padding: 0 15px;">Home</a>
+        <a href="inscricao.html" style="color: white; text-decoration: none; padding: 0 15px;">Newsletter</a>
+        <a href="sobre.html" style="color: white; text-decoration: none; padding: 0 15px;">Sobre</a>
+        <a href="redirect.html?to=https://pay.kiwify.com.br/qinbsji&source=menu" style="color: white; text-decoration: none; padding: 0 15px; font-weight: bold;">Comprar Ebook</a>
+    </nav>
+
+    <div class="container">
+        <h2>Receba Dicas Exclusivas de Receitas e Emagrecimento</h2>
+        <p>Cadastre-se em nossa newsletter gratuita e fique por dentro das melhores estratégias para emagrecer com saúde e deliciosas receitas!</p>
+
+        <div class="benefits">
+            <h3>Ao se inscrever, você receberá:</h3>
+            <ul>
+                <li><strong>Dicas semanais</strong> de alimentação saudável</li>
+                <li><strong>Receitas rápidas e nutritivas</strong> exclusivas para assinantes</li>
+                <li><strong>Estratégias comprovadas</strong> para emagrecimento saudável</li>
+                <li><strong>Acesso antecipado</strong> a novos conteúdos do blog</li>
+                <li><strong>Descontos especiais</strong> para o ebook "RECEITAS BENEFICAS"</li>
+            </ul>
+        </div>
+
+        <div class="lead-form">
+            <form id="newsletterForm" onsubmit="return saveSubscriber(this)">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="seu-melhor-email@exemplo.com">
+                </div>
+                <button type="submit" class="subscribe-btn">QUERO RECEBER DICAS GRÁTIS</button>
+            </form>
+        </div>
+
+        <div class="disclaimer">
+            <p>* Seus dados estão seguros conosco. Não compartilhamos suas informações com terceiros e você pode cancelar sua inscrição a qualquer momento.</p>
+        </div>
+
+        <a href="blog.html" class="back-link">Voltar para o Blog</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome/Projeto - Afiliado Ebook RECEITAS BENEFICAS</p>
+    </footer>
+
+    <script>
+        // Função simples para salvar os dados no localStorage (simula um banco de dados)
+        function saveSubscriber(form) {
+            // Pegar valores do formulário
+            const name = form.name.value;
+            const email = form.email.value;
+            
+            // Criar objeto com data de inscrição
+            const subscriber = {
+                name: name,
+                email: email,
+                date: new Date().toISOString()
+            };
+            
+            // Obter lista atual de inscritos ou iniciar uma nova
+            let subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
+            
+            // Verificar se o email já existe
+            const emailExists = subscribers.some(sub => sub.email === email);
+            if (emailExists) {
+                alert('Este email já está cadastrado em nossa newsletter!');
+                return false;
+            }
+            
+            // Adicionar novo inscrito
+            subscribers.push(subscriber);
+            
+            // Salvar no localStorage
+            localStorage.setItem('subscribers', JSON.stringify(subscribers));
+            
+            // Exibir mensagem de sucesso
+            alert('Inscrição realizada com sucesso! Em breve você receberá nossas novidades.');
+            
+            // Redirecionar para página de agradecimento (opcional)
+            window.location.href = 'agradecimento.html';
+            
+            // Evitar o envio tradicional do formulário
+            return false;
+        }
+    </script>
+</body>
+</html> 

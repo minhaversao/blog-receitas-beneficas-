@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Receitas Benéficas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { width: 80%; margin: auto; overflow: hidden; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        header { background-color: #0072ff; color: #fff; padding: 20px 0; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; }
+        .post-listing { list-style: none; padding: 0; }
+        .post-listing li { background-color: #fff; border: 1px solid #ddd; margin-bottom: 20px; padding: 20px; border-radius: 5px; }
+        .post-listing h2 { margin-top: 0; color: #0072ff; }
+        .post-listing h2 a { text-decoration: none; color: #0072ff; }
+        .post-listing h2 a:hover { text-decoration: underline; }
+        .post-listing .date { color: #777; font-size: 0.9em; margin-bottom: 10px; }
+        .post-listing p { margin-bottom: 10px; line-height: 1.6; }
+        .read-more { display: inline-block; background-color: #FF6B00; color: #fff; padding: 8px 15px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s; }
+        .read-more:hover { background-color: #FF8C00; }
+        footer { text-align: center; padding: 20px; margin-top: 30px; background-color: #333; color: #fff; }
+        #search-container { margin: 20px 0; text-align: center; }
+        #search-input { padding: 10px; width: 60%; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
+        #search-button { padding: 10px 15px; background-color: #0072ff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .social-share { margin-top: 10px; }
+        .social-share a { display: inline-block; margin-right: 10px; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; }
+        .facebook { background-color: #3b5998; }
+        .twitter { background-color: #1da1f2; }
+        .whatsapp { background-color: #25d366; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog de Receitas Benéficas</h1>
+    </header>
+
+    <nav style="background-color: #005ccf; padding: 10px 0; text-align: center;">
+        <a href="blog.html" style="color: white; text-decoration: none; padding: 0 15px;">Home</a>
+        <a href="inscricao.html" style="color: white; text-decoration: none; padding: 0 15px;">Newsletter</a>
+        <a href="sobre.html" style="color: white; text-decoration: none; padding: 0 15px;">Sobre</a>
+        <a href="redirect.html?to=https://pay.kiwify.com.br/qinbsji&source=menu" style="color: white; text-decoration: none; padding: 0 15px; font-weight: bold;">Comprar Ebook</a>
+    </nav>
+
+    <div class="container">
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Buscar no blog...">
+            <button id="search-button" onclick="searchBlog()">Buscar</button>
+        </div>
+
+        <ul class="post-listing">
+            <li>
+                <div class="date">10 de Julho de 2024</div>
+                <h2><a href="artigo-mitos-dieta.html">5 Mitos Sobre Dietas de Emagrecimento que Você Precisa Esquecer</a></h2>
+                <p>Desmistificamos alguns dos equívocos mais comuns sobre perda de peso e revelamos o que realmente funciona para um emagrecimento saudável e sustentável, com base em informações que complementam o ebook "RECEITAS BENEFICAS".</p>
+                <a href="artigo-mitos-dieta.html" class="read-more">Leia Mais &raquo;</a>
+                <div class="social-share">
+                    <a href="javascript:void(0)" onclick="shareOnFacebook('artigo-mitos-dieta.html')" class="facebook">Compartilhar no Facebook</a>
+                    <a href="javascript:void(0)" onclick="shareOnTwitter('5 Mitos Sobre Dietas de Emagrecimento que Você Precisa Esquecer', 'artigo-mitos-dieta.html')" class="twitter">Compartilhar no Twitter</a>
+                    <a href="javascript:void(0)" onclick="shareOnWhatsApp('5 Mitos Sobre Dietas de Emagrecimento que Você Precisa Esquecer', 'artigo-mitos-dieta.html')" class="whatsapp">Compartilhar no WhatsApp</a>
+                </div>
+            </li>
+            <li>
+                <div class="date">12 de Julho de 2024</div>
+                <h2><a href="artigo-sem-tempo.html">Sem Tempo para Cozinhar? 3 Estratégias para Refeições Saudáveis Rápidas</a></h2>
+                <p>A vida é corrida, mas sua saúde não pode esperar. Descubra táticas inteligentes para preparar refeições nutritivas em minutos, inspiradas na praticidade que o ebook "RECEITAS BENEFICAS" também valoriza.</p>
+                <a href="artigo-sem-tempo.html" class="read-more">Leia Mais &raquo;</a>
+                <div class="social-share">
+                    <a href="javascript:void(0)" onclick="shareOnFacebook('artigo-sem-tempo.html')" class="facebook">Compartilhar no Facebook</a>
+                    <a href="javascript:void(0)" onclick="shareOnTwitter('Sem Tempo para Cozinhar? 3 Estratégias para Refeições Saudáveis Rápidas', 'artigo-sem-tempo.html')" class="twitter">Compartilhar no Twitter</a>
+                    <a href="javascript:void(0)" onclick="shareOnWhatsApp('Sem Tempo para Cozinhar? 3 Estratégias para Refeições Saudáveis Rápidas', 'artigo-sem-tempo.html')" class="whatsapp">Compartilhar no WhatsApp</a>
+                </div>
+            </li>
+            <li>
+                <div class="date">15 de Julho de 2024</div>
+                <h2><a href="artigo-vale-a-pena.html">Por Dentro do Ebook 'RECEITAS BENEFICAS': Vale a Pena?</a></h2>
+                <p>Uma análise detalhada do que o ebook "RECEITAS BENEFICAS" oferece, seus diferenciais e como ele pode ser a peça que faltava na sua jornada para uma vida mais saudável e um corpo em forma.</p>
+                <a href="artigo-vale-a-pena.html" class="read-more">Leia Mais &raquo;</a>
+                <div class="social-share">
+                    <a href="javascript:void(0)" onclick="shareOnFacebook('artigo-vale-a-pena.html')" class="facebook">Compartilhar no Facebook</a>
+                    <a href="javascript:void(0)" onclick="shareOnTwitter('Por Dentro do Ebook RECEITAS BENEFICAS: Vale a Pena?', 'artigo-vale-a-pena.html')" class="twitter">Compartilhar no Twitter</a>
+                    <a href="javascript:void(0)" onclick="shareOnWhatsApp('Por Dentro do Ebook RECEITAS BENEFICAS: Vale a Pena?', 'artigo-vale-a-pena.html')" class="whatsapp">Compartilhar no WhatsApp</a>
+                </div>
+            </li>
+            <li>
+                <div class="date">18 de Julho de 2024</div>
+                <h2><a href="artigo-rotulos.html">Como Ler Rótulos e Entender Nutrientes Para Emagrecer com Saúde</a></h2>
+                <p>Muitas pessoas não sabem interpretar o que está escrito nas embalagens dos alimentos. Aprenda a decifrar rótulos e fazer escolhas mais inteligentes para seu emagrecimento.</p>
+                <a href="artigo-rotulos.html" class="read-more">Leia Mais &raquo;</a>
+                <div class="social-share">
+                    <a href="javascript:void(0)" onclick="shareOnFacebook('artigo-rotulos.html')" class="facebook">Compartilhar no Facebook</a>
+                    <a href="javascript:void(0)" onclick="shareOnTwitter('Como Ler Rótulos e Entender Nutrientes Para Emagrecer com Saúde', 'artigo-rotulos.html')" class="twitter">Compartilhar no Twitter</a>
+                    <a href="javascript:void(0)" onclick="shareOnWhatsApp('Como Ler Rótulos e Entender Nutrientes Para Emagrecer com Saúde', 'artigo-rotulos.html')" class="whatsapp">Compartilhar no WhatsApp</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Seu Nome/Projeto - Afiliado Ebook RECEITAS BENEFICAS</p>
+    </footer>
+
+    <script>
+        // Funções de compartilhamento em redes sociais
+        function shareOnFacebook(url) {
+            const fullUrl = window.location.origin + '/' + url;
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(fullUrl), '_blank');
+        }
+        
+        function shareOnTwitter(title, url) {
+            const fullUrl = window.location.origin + '/' + url;
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(fullUrl), '_blank');
+        }
+        
+        function shareOnWhatsApp(title, url) {
+            const fullUrl = window.location.origin + '/' + url;
+            window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(title + ' ' + fullUrl), '_blank');
+        }
+
+        // Função de busca
+        function searchBlog() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const posts = document.querySelectorAll('.post-listing li');
+            
+            posts.forEach(post => {
+                const title = post.querySelector('h2').textContent.toLowerCase();
+                const content = post.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+            
+            // Se nenhum resultado for encontrado
+            let visiblePosts = Array.from(posts).filter(post => post.style.display !== 'none');
+            if (visiblePosts.length === 0) {
+                alert('Nenhum resultado encontrado para: ' + searchTerm);
+                // Mostrar todos novamente
+                posts.forEach(post => post.style.display = 'block');
+            }
+        }
+    </script>
+</body>
+</html> 
